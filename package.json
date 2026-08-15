@@ -1,0 +1,41 @@
+{
+  "name": "parabank-tests",
+  "version": "1.0.0",
+  "description": "Parabank Tests Playwright Automation",
+  "main": "index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "pretest": "npm run typecheck",
+    "test": "npx playwright test --headed",
+    "test:chrome": "npx playwright test --project=chromium --headed",
+    "test:firefox": "npx playwright test --project=firefox --headed",
+    "test:webkit": "npx playwright test --project=webkit --headed",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpsd1842/Parabank-Tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*",
+    "#pages/*": "./pages/*",
+    "#fixtures/*": "./fixtures/*"
+  },
+  "bugs": {
+    "url": "https://github.com/dpsd1842/Parabank-Tests/issues"
+  },
+  "homepage": "https://github.com/dpsd1842/Parabank-Tests#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "screenshot-desktop": "^1.15.6"
+  }
+}

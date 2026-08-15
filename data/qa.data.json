@@ -1,0 +1,45 @@
+{
+    "baseUrl": "https://parabank.parasoft.com/parabank/index.htm",
+    "dataSet": [
+        {
+            "data": {
+                "username": "admin",
+                "password": "demo",
+                "accountid": "12345"
+            },
+            "dataid": "admin_data"
+        },
+        {
+            "data": {
+                "username": "jane",
+                "password": "userpwd",
+                "accountid": "67890"
+            },
+            "dataid": "user_data"
+        },
+        {
+            "data": {
+                "username": "invalid_user",
+                "password": "invalid_pass",
+                "accountid": "00000"
+            },
+            "dataid": "invalid_data"
+        },
+        {
+            "data": {
+                "username": "savings_user",
+                "password": "testpass",
+                "accountid": "54321"
+            },
+            "dataid": "savings_user_data"
+        },
+        {
+            "data": {
+                "username": "checking_user",
+                "password": "testpass",
+                "accountid": "98765"
+            },
+            "dataid": "checking_user_data"
+        }
+    ]
+}

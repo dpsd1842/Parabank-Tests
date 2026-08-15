@@ -1,0 +1,28 @@
+> npm init playwright@latest
+# Generate a Playwright project structure from the command line
+
+> tsc --noEmit
+# To guarantee your code is 100% bug-free before running tests—especially in a CI/CD pipeline (like GitHub Actions)—you run a specific TypeScript check command.
+# The --noEmit flag tells the TypeScript compiler: "Scan my entire project using my tsconfig.json rules and tell me if there are type errors, but do not waste time generating any output .js files."
+
+> npm run test -- --no-pretest
+# Bypass the pretest step temporarily to run a quick test check
+
+> npx playwright test
+# Runs the end-to-end tests.
+
+> npx playwright test --ui
+# Starts the interactive UI mode.
+
+> npx playwright test --project=chromium
+# Runs the tests only on Desktop Chrome.
+
+> npx playwright test example
+# Runs the tests in a specific file.
+
+> npx playwright test --debug
+# Runs the tests in debug mode.
+
+> npx playwright codegen
+# Auto generate tests with Codegen.
+
