@@ -5,7 +5,7 @@ import testData from '#data/qa.data.json';
 
 dotenv.config({path: path.resolve('.', '.env')});
 
-const tdPath = `data/${process.env.ENV}.data.json`
+const tdPath = `data/${process.env.ENV | 'qa'}.data.json`
 
 export const getTestData: any = async () => {
     const resData = await JSON.parse(fs.readFileSync(tdPath, 'utf-8'));
