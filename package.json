@@ -6,8 +6,9 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "pretest": "npm run typecheck",
+    "test:verify": "tsc --noEmit && npx playwright test --dry-run",
     "test": "npx playwright test --headed",
-    "test:chrome": "npx playwright test --project=chromium --headed",
+    "test:chrome": "npm run typecheck && npx playwright test --project=chromium --headed",
     "test:firefox": "npx playwright test --project=firefox --headed",
     "test:webkit": "npx playwright test --project=webkit --headed",
     "test:headed": "npx playwright test --headed",
@@ -23,8 +24,10 @@
   "type": "module",
   "imports": {
     "#/*": "./src/*",
-    "#pages/*": "./pages/*",
-    "#fixtures/*": "./fixtures/*"
+    "#src/*": "./src/*",
+    "#pages/*": "./src/pages/*",
+    "#fixtures/*": "./src/fixtures/*",
+    "#data/*": "./data/*"
   },
   "bugs": {
     "url": "https://github.com/dpsd1842/Parabank-Tests/issues"

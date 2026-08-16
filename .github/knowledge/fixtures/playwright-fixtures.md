@@ -52,6 +52,42 @@ export const test = baseTest.extend<MyFixtures>({
 export { expect } from '@playwright/test';
 ```
 
+### Explain Lines
+
+``` typescript
+  welcomePage: async ({ page }, use) => {
+```
+- This line defines a custom fixture named welcomePage by declaring an asynchronous function that Playwright runs whenever a test requests that fixture.
+Here is the exact breakdown of what each part means:
+
+* welcomePage: – The name of your custom fixture. You will use this exact name in your test arguments (e.g., test('my test', async ({ welcomePage }) => { ... })).
+* async (...) => – An asynchronous arrow function. Fixtures in Playwright are asynchronous because they setup and teardown browser environments, which takes time.
+* { page } – Object destructuring that pulls Playwright's built-in page fixture into your custom fixture. This gives your custom page object access to the actual browser tab.
+* use – A special callback function provided by Playwright. It acts as a bridge; you pass your initialized page object to use(), which hands it over to the test. Everything before use() is setup logic, and everything after is teardown logic.
+
+### Metaphor to understand it easily
+Think of this line as a concierge service for your test:
+
+   1. It looks at the blueprint ({ page }) to see what it needs.
+   2. It prepares the room (instantiates new WelcomePage(page)).
+   3. It hands the keys to your test (use).
+   4. It waits for the guest to check out (the test finishes), then cleans up the room.
+
+### Extend()
+
+- Yes, extend is a built-in Playwright method belonging to the test object. [1] 
+It is specifically designed to create a new, customized version of the Playwright test runner. [2] 
+
+### What it does
+
+* Creates child test instances: It copies the core Playwright test functionality but allows you to append custom features.
+* Registers custom fixtures: It tells Playwright how to set up, provide, and tear down your Page Object Models (welcomePage, homePage).
+* Enforces TypeScript types: By passing <MyFixtures> to baseTest.extend<MyFixtures>, it ensures your test files get autocomplete and type-checking for your custom pages. [3, 4, 5, 6, 7] 
+
+### Where it lives in Playwright
+It is a method on the TestType interface. When you import test as baseTest from @playwright/test, you are fetching Playwright's default test runner, and .extend() is the gateway to configuring it for your project's specific framework. [8, 9, 10] 
+
+
 ## Step 2: Use the Fixtures inside your Test File [6] 
 Now, look at how incredibly clean and readable your test specs become. You simply call your fixtures by name in the argument block: [7, 8] 
 

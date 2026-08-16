@@ -1,30 +1,30 @@
 import { test, expect } from '@playwright/test';
-import screenshot from 'screenshot-desktop';
+// import screenshot from 'screenshot-desktop';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+// test('has title', async ({ page }) => {
+//   await page.goto('https://playwright.dev/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+//   // Expect a title "to contain" a substring.
+//   await expect(page).toHaveTitle(/Playwright/);
+// });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+// test('get started link', async ({ page }) => {
+//   await page.goto('https://playwright.dev/');
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+//   // Click the get started link.
+//   await page.getByRole('link', { name: 'Get started' }).click();
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+//   // Expects page to have a heading with the name of Installation.
+//   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+// });
 
-test.only('test only example', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+// test.only('test only example', async ({ page }) => {
+//   await page.goto('https://playwright.dev/');
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+//   // Click the get started link.
+//   await page.getByRole('link', { name: 'Get started' }).click();
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-  await screenshot({ filename: 'test-results/screenshot.png' })
-});
+//   // Expects page to have a heading with the name of Installation.
+//   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+//   // await screenshot({ filename: 'test-results/screenshot.png' })
+// });
